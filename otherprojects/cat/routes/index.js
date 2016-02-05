@@ -6,11 +6,11 @@ var cat_colors = ['red', 'green', 'blue', 'orange', 'yellow'];
 
 //function that constructs and returns cat object
 function Cat(){
-  var cat = {name: cat_names[Math.floor(Math.random()*cat_names.length)],
+  return {name: cat_names[Math.floor(Math.random()*cat_names.length)],
              age: Math.floor(Math.random() * 6),
              color: cat_colors[Math.floor(Math.random()*cat_colors.length)]
   };
-  return cat;
+  // you don't need to name the variable! Can just return directly
 }
 
 function getAllCats(){
@@ -30,6 +30,8 @@ router.get('/', function(req, res, next){
     {mpath:"/cats/bycolor/red",text:"Wait, do I have red cats"}
     ]
   });
+  // awesome that you have a page which links to all of your routes!
+  // Also, this is exactly the right way to use Handlebars :)
 });
 
 //get all cat names
@@ -42,6 +44,17 @@ router.get('/cats', function(req, res, next){
     " years old and the color " + catas.color + "</br>" ;
   });
   res.send(msg);
+
+  /*
+  Using Handlebars would look something like this:
+  (the name of the template would be "cats.handlebars" and the object is
+  the data you're rendering into the template)
+
+  res.render("cats", {
+    name: catas.name,
+    color: catas.color
+  });
+  */
 });
 
 // create new cat randomly named 
