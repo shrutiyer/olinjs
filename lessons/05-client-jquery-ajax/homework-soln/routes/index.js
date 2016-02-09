@@ -25,8 +25,6 @@ routes.ingredients = function(req, res) {
 					   'outOfStock':formatPrice(outData)};
 		res.render('ingredients', hbsData);
 	});
-
-	
 }
 
 routes.order = function(req, res) {

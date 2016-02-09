@@ -1,0 +1,1 @@
+The burger app currently has only the ingredients pafe working. After talking to the teaching team, I figured the orders and the kitchen page needs very similar concepts as the ingredients app. The code isn't that great but I expect to come back to this code and re-write it.

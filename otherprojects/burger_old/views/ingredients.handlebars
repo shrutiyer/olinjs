@@ -1,0 +1,30 @@
+<h2>Ingredients</h2>
+
+<form class="allIngre" action="InStock" method="POST">
+	<span class="name">{{this.name}}</span> <span class="cost"> - ${{this.cost}}</span>
+	<input type="text" name="ingreName" class="editName" placeholder="Ingredient Name">
+	<input type="number" name="ingreCost" class="editCost" placeholder="Ingredient Cost">
+	<input type="button" class="edit" id="editTemplate" value="Edit">
+	<input type="button" class="del" id="delTemplate" value="Delete">
+</form>	
+
+<div id="ing">
+	{{#each ingredients}}
+		<form class="{{this._id}}" action="InStock" method="POST">
+			<span class="name">{{this.name}}</span> <span class="cost"> - ${{this.cost}}</span>
+			<input type="text" name="ingreName" class="editName" placeholder="Ingredient Name">
+			<input type="number" name="ingreCost" class="editCost" placeholder="Ingredient Cost">
+			<input type="button" class="edit" id={{this._id}} ingredient="{{this.id}}" value="Edit">
+			<input type="button" class="del" id="del{{this._id}}" value="Delete">
+		</form>
+	{{/each}}
+</div>
+
+<h3>New Ingredient</h3>
+<div id="new">
+	<form id="newIngredient" action="addIngre" method="POST">
+		Ingredient: <input type="text" id="name" name="Ingredient">
+		Cost: $<input type="text" id="cost" name="Cost">
+		<input type="submit" class="submit" value="Add">
+	</form>
+</div>
