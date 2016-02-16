@@ -1,16 +1,21 @@
 html {
-	margin: 0;
-	padding: 0;
+	margin: 10;
+	padding: 10;
 }
 
 body {
-	font: 100% georgia, sans-serif;
+	font: 100% georgia, serif;
 	color: #555753; 
 }
 
 p { 
-	margin-top: 0; 
+	margin-top: 20; 
 	text-align: justify;
+	letter-spacing: 1px;
+}
+
+ul {
+    list-style-position: inside;
 }
 
 h1 {
@@ -46,12 +51,12 @@ a:visited {
 }
 a:hover, a:focus, a:active {
 	text-decoration: underline; 
-	color: #9685BA;
+	color: #0000CD;
 }
 
 .summary {
 	width: 300px;
-	padding: 20px 20px 20px 20px; 
+	padding: 35px 50px 20px 20px; 
 	float: left;
 }
 

@@ -1,0 +1,16 @@
+.login { 
+	height:100px;
+	width:180px;
+	margin:auto;
+	border:1px #CCC solid;
+	padding:30px;
+	background-color:#4099FF; 
+	text-align: center;
+}
+
+input { 
+  background: #DEFFE1;
+  border:1px #CCC solid;
+  padding:10px;
+  margin-bottom: 30px;
+}

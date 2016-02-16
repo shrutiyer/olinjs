@@ -1,0 +1,93 @@
+/*Followed this tutorial
+* http://www.456bereastreet.com/lab/developing_with_web_standards/csslayout/2-col/
+*/
+body {
+    background-color: lightblue;
+}
+h1 {
+    font-size: 48px;
+	height: 60px;
+	background-color: #E8D0A9;
+	text-align: center;
+	font-family: 'Roboto', sans-serif;
+	color: #6D929B;
+}
+
+.tweetform {
+	height:50px;
+	width:510px;
+	margin:auto;
+	border:1px #CCC solid;
+	padding:20px;
+	background-color:#4099FF; 
+	text-align: left;
+	float: center;
+	margin-bottom: 20px;
+}
+
+.twoper {
+	text-align: right;
+	padding-right: 12px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	font-size: 20px;
+}
+
+input[type="text"] {
+	height: 30px;
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: 20px;
+}
+
+input[type="submit"] {
+	height: 35px;
+    font-family: Impact, Charcoal, sans-serif;
+    font-size: 20px;
+}
+
+#main {
+	float:left;
+	width:500px;
+	margin-left: 80px;
+	padding-left: 20px;
+	color: #FFFFFF; 
+}
+
+#main #hidden-tweet{
+	display: none;
+}
+
+#main .tweet {
+	width:500px;
+	height: 40px;
+	border:3px #6D929B solid;
+	margin-bottom: 20px;
+	background:#808080;
+	font-size: 20px;
+	padding-top: 10px;
+}
+
+#main .tweet .del{
+	float: right;
+}
+
+#sidebar {
+	float:right;
+}
+
+#sidebar .eachtw {
+	padding-bottom: 10px;
+	width:250px;
+	background: #808080;
+	margin-right: 80px;
+	margin-bottom: 10px;
+	border:3px #6D929B solid;
+	padding-left: 20px;
+	color: #FFFFFF; 
+	font-size: 20px;
+}
+
+#sidebar .eachtw:hover { 
+    background-color: pink;
+    
+}
