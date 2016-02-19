@@ -32,8 +32,7 @@ describe("The app", function() {
   it('should respond with the correct html on GET /cats', function(done) {
     request(app)
       .get('/cats')
-      .expect('Content-Type', 'text/html; charset=utf-8')
-      .expect('Content-Length', '151', done);
+      .expect('Content-Type', 'text/html; charset=utf-8',done);
   });
 
   // What other routes can you test?
