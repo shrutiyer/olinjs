@@ -1,0 +1,48 @@
+<link rel="stylesheet" type="text/css" href="stylesheets/alltweets.css" media="screen" />
+<link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+
+<body>
+	<div="header">
+		<h1>Twotter</h1>
+	</div>
+
+	<div style="float:right">
+		<form align="right" name="form1" method="post" action="logout">
+		  <input name="submit" type="submit" id="logout" value="Log Out">
+		</form>
+	</div>
+
+	<div id="tweetbar">
+		<form class="tweetform">
+			<input type="text" name="tweettext" placeholder="Enter Your Twott Here" id="tweet" maxlength="30" size="35">  
+			<input name="tweet" type="submit" value="Twott">
+			<div class="twoper">{{username}}</div>
+
+		</form>
+	</div>
+
+	<div id="main" class="main">
+		<div class="tweet" id="hidden-tweet">
+				<!--TODO: Add delete button to this-->
+				<input type="image" class="del" id="tempId" src="http://jacksonville.com/adhub/tools/templates/gray-square_white-x_v2.png" alt="Del" width="10" height="10">
+				<div id="tw"></div>
+		</div>
+		{{#each tweet}}
+			<div class="tweet" autho="{{this.name}}" id="{{this._id}}">
+				<!--TODO: Add delete button to this-->
+				<input type="image" id="d{{this._id}}" class="del" src="http://jacksonville.com/adhub/tools/templates/gray-square_white-x_v2.png" alt="{{this.name}}" width="10" height="10">
+				<div id="tw">{{this.tweet}} - {{this.name}}</div>
+			</div>
+		{{/each}}
+	</div>
+
+	<div id="sidebar">
+		{{#each user}}
+		<div class="eachtw" author="{{this.name}}">
+			{{this.name}}</br>
+		</div>
+		{{/each}}
+	</div>	
+
+</body>
+
