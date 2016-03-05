@@ -48,5 +48,8 @@ $('#sidebar').find('.eachtw').click(function(event) {
 	$('.tweet').css({'background-color':'#808080'});
 	var clickedUser = $(this).attr('author');
 	var $clickedTweets = $("[autho="+clickedUser+"]");
+	// this is not handled as it should -> what happens when "hover away" or "click to go back to normal"?
+	// Also what if I click on a person on the side bar and then I add a new twote with that same person? Will the highlight
+	// be there on the new one. right now it is not.
 	$clickedTweets.css({'background-color': 'pink'});
 });
