@@ -7,7 +7,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var session = require('express-session');
-var auth = require('./auth');
+var auth = require('./oauth');
 var User = require('./models/userModel');
 var passport = require('passport');
 var FacebookStrategy = require('passport-facebook').Strategy;
@@ -21,9 +21,9 @@ passport.deserializeUser(function(user, done) {
 });
 
 passport.use(new FacebookStrategy({
-    clientID: auth.FACEBOOK_APP_ID,
-    clientSecret: auth.FACEBOOK_APP_SECRET,
-    callbackURL: auth.FACEBOOK_CALLBACK_URL
+    clientID: auth.facebook.clientID,
+    clientSecret: auth.facebook.clientSecret,
+    callbackURL: auth.facebook.callbackURL
   },
   function(accessToken, refreshToken, profile, done) {
     done(null, profile);
@@ -48,6 +48,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+// you can handle this in index.js API file instead of here it is conventionally better
 app.get("/", function(req, res){
   var sess = req.session;
   //console.log(sess);
@@ -69,6 +70,8 @@ app.get('/', index.homeGET);
 app.post('/login', ensureAuthenticated, index.loginPOST);
 app.get('/alltweets', ensureAuthenticated, index.alltweetsGET);
 app.post('/tweet', ensureAuthenticated, index.tweetPOST);
+// delete does not work asynchronously - I have to refresh to be able to delete a twotte, otherwise it seems like 
+// nothing is happening...
 app.post('/delete', index.deletePOST);
 app.post('/logout', index.logoutPOST);
 
