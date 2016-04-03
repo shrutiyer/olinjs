@@ -26,4 +26,6 @@ describe("The app", function() {
       .get('/notaroute')
       .expect(404, done);
   });
+
+  // It would be nice some of your post requests tested
 });
